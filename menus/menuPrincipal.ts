@@ -1,7 +1,9 @@
 import Menu from "../interfaces/menu";
 import Entrada from "../io/entrada";
+import AtualizarCliente from "../negocio/atualizarCliente";
 import MenuTipoCadastroCliente from "./menuTipoCadastroCliente";
 import MenuTipoListagemClientes from "./menuTipoListagemClientes"; 
+import ExcluirCliente from "../negocio/excluirCliente";
 
 export default class MenuPrincipal implements Menu {
     private entrada: Entrada;
@@ -35,10 +37,12 @@ export default class MenuPrincipal implements Menu {
                     menuListagem.mostrar();
                     break;
                 case 3:
-                    console.log('\nOpção 3 - Atualizar (Não implementado)');
+                    const processoAtualizar = new AtualizarCliente();
+                    processoAtualizar.processar();
                     break;
                 case 4:
-                    console.log('\nOpção 4 - Excluir (Não implementado)');
+                    const processoExcluir = new ExcluirCliente();
+                    processoExcluir.processar();
                     break;
                 case 0:
                     this.execucao = false;
