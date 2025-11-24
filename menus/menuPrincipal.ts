@@ -1,6 +1,7 @@
 import Menu from "../interfaces/menu";
 import Entrada from "../io/entrada";
 import MenuTipoCadastroCliente from "./menuTipoCadastroCliente";
+import MenuTipoListagemClientes from "./menuTipoListagemClientes"; 
 
 export default class MenuPrincipal implements Menu {
     private entrada: Entrada;
@@ -17,7 +18,7 @@ export default class MenuPrincipal implements Menu {
         while (this.execucao) {
             console.log(`\nOpções Principais:`);
             console.log(`1 - Cadastrar Cliente`);
-            console.log(`2 - Listar Clientes`);
+            console.log(`2 - Listar Clientes`); 
             console.log(`3 - Atualizar Cliente`);
             console.log(`4 - Excluir Cliente`);
             console.log(`0 - Sair`);
@@ -30,7 +31,8 @@ export default class MenuPrincipal implements Menu {
                     menuCadastro.mostrar();
                     break;
                 case 2:
-                    console.log('\nOpção 2 - Listagem (Não implementado)');
+                    const menuListagem = new MenuTipoListagemClientes();
+                    menuListagem.mostrar();
                     break;
                 case 3:
                     console.log('\nOpção 3 - Atualizar (Não implementado)');

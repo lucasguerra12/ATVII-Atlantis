@@ -52,6 +52,8 @@ export default class CadastroClienteDependente extends Processo {
             dependente.telefones.push(telefone.clonar() as Telefone);
         }
 
+        dependente.titular = titular;
+        
         titular.dependentes.push(dependente); 
 
         armazem.getClientes.push(dependente);
